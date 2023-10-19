@@ -5,6 +5,7 @@ public class MemberGold implements Member, CanGetDiskon,CanRequestDelivery,CanRe
   private double totalBelanja;
   private int jarakTempuh;
   private int cicilanBulan;
+ 
 
     public MemberGold(){
         
@@ -22,7 +23,7 @@ public class MemberGold implements Member, CanGetDiskon,CanRequestDelivery,CanRe
       this.poin += (int) (jumlahBelanja / 10000); // 1 poin setiap kelipatan Rp 10,000
   }
 
-  public void redeemPoin(int jumlahPoin) {
+  public void redeemPoin(Integer jumlahPoin) {
       if (jumlahPoin <= poin) {
           this.poin -= jumlahPoin;
           System.out.println("Poin berhasil diredeem!");
@@ -74,4 +75,8 @@ public Double hitungOngkir(Double jarak) {
     }
     return ongkir;
 }
+public Integer hitungCicilanPerBulan(Integer amount, Integer time){
+    return cicilanBulan;
+}
+
 }

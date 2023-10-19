@@ -81,20 +81,35 @@ public class MemberPlatinum implements Member, CanGetDiskon,CanRequestDelivery,C
             return ongkir;
         }
 
-  public void deposit(double jumlahDeposit) {
-      this.saldoDeposit += jumlahDeposit;
-  }
+        @Override
+        public void deposit(Integer jumlahDeposit) {
+            // Implement the logic to deposit the specified amount
+            // For example, add the deposit amount to the existing saldoDeposit
+            this.saldoDeposit += jumlahDeposit;
+            System.out.println("Deposit berhasil: " + jumlahDeposit);
+        }
 
-  public void tarikTunai(double jumlahTarikTunai) {
-      if (jumlahTarikTunai <= saldoDeposit) {
-          this.saldoDeposit -= jumlahTarikTunai;
-          System.out.println("Penarikan tunai berhasil!");
-      } else {
-          System.out.println("Saldo deposit tidak mencukupi.");
-      }
-  }
+  @Override
+    public void tarikTunai(Integer jumlahTarikTunai) {
+        if (jumlahTarikTunai <= saldoDeposit) {
+            this.saldoDeposit -= jumlahTarikTunai;
+            System.out.println("Penarikan tunai berhasil!");
+        } else {
+            System.out.println("Saldo deposit tidak mencukupi.");
+        }
+    }
 
   public double cekSaldo() {
       return saldoDeposit;
   }
+
+
+  @Override
+    public Integer hitungCicilanPerBulan(Integer amount, Integer time) {
+        // Implement logic to calculate monthly installment for platinum members
+        // For example, you can calculate it based on the given amount and time period
+        // Return the calculated monthly installment
+        // Note: You need to implement the logic specific to your requirements here
+        return amount / time;
+    }
 }
