@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "Interface Test",
+      "setup": "",
+      "run": "mvn test",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 100
+    }
+  ]
+}
