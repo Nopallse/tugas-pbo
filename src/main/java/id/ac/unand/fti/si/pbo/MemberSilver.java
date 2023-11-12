@@ -6,7 +6,6 @@ public class MemberSilver implements Member, CanGetDiskon,CanRequestDelivery {
     private Integer jarakTempuh;
 
     public MemberSilver(){
-
     }
 
     public MemberSilver(Integer jarakTempuh) {
@@ -14,8 +13,6 @@ public class MemberSilver implements Member, CanGetDiskon,CanRequestDelivery {
         this.totalBelanja = totalBelanja;
         this.jarakTempuh = jarakTempuh;
     }
-
-
 
     public void redeemPoin(Integer jumlahPoin) {
         if (jumlahPoin <= poin) {
@@ -55,7 +52,6 @@ public class MemberSilver implements Member, CanGetDiskon,CanRequestDelivery {
     }
 
     public Double hitungOngkir(Double jarak) {
-        //jika < 5 km dari toko. Kelebihan jarak akan dikenakan biaya Rp 1.500/km
         Double ongkir;
         if(jarak>5){
             if(jarak%1!=0){
